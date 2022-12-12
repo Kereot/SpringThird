@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Products</title>
+</head>
+<body>
+<table>
+    <tr th:each="product: ${products}">
+        <td th:text="'Id.' + ${product.id} + ':'"></td>
+        <td th:text="${product.title} + ' -'"></td>
+        <td th:text="${#numbers.formatCurrency(product.cost)}"></td>
+    </tr>
+</table>
+<br>
+
+
+<form action="">
+    <label for="id">Id:</label><br>
+    <input type="number" id="id" name="id" value=""><br>
+    <label for="title">Title:</label><br>
+    <input type="text" id="title" name="title" value=""><br>
+    <label for="cost">Price:</label><br>
+    <input type="number" id="cost" name="cost" value=""><br>
+    <input type="submit" value="Add"><br><br>
+</form>
+<form action="">
+    <label for="idRem">Id:</label><br>
+    <input type="number" id="idRem" name="idRem" value=""><br>
+    <input type="submit" value="Remove">
+</form>
+</body>
+</html>
